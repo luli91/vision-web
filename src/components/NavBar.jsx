@@ -44,7 +44,7 @@ const NavBar = () => {
                     {
                         currentUser ? <>
                         <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                            <img src={ avatarImg } alt="logged in user"className={`size-7 rounded-full ${currentUser ? 'ring-2 ring-blue-500':'' }`} />
+                            <img src={ avatarImg } alt="logged in user"className={`size-6 rounded-full ${currentUser ? 'ring-2 ring-green-500 ':'' }`} />
                         </button>
                         {/* show dropdowns */}
                         {
