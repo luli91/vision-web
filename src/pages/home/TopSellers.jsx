@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { DiHtml5DeviceAccess } from 'react-icons/di';
+import ProductsCard from '../products/ProductsCard';
 
 const categories = ["Elegí la categoria", "Sol", "Lectura", "Computadora", "Deportivos", "Tecnología", "Moda  "]
 
@@ -32,6 +34,11 @@ const TopSellers = () => {
                 }
             </select>
         </div>
+        {
+            filteredProductos.map((productos, index)  => (
+                <ProductsCard key={index} producto={productos}/>
+            ))
+        }
     </div>
   )
 }
