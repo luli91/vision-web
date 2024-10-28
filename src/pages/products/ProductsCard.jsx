@@ -1,42 +1,45 @@
-import React from 'react'
-import { FiShoppingCart } from 'react-icons/fi'
-import { getImgUrl } from '../../utils/getImgUrl'
+import React from 'react';
+import { FiShoppingCart } from 'react-icons/fi';
+import { getImgUrl } from '../../utils/getImgUrl';
+import { Link } from 'react-router-dom';
 
-const ProductsCard = ({producto}) => {
+const ProductsCard = ({ producto }) => {
     console.log(getImgUrl(producto.coverImage));
 
     return (
-        <div className=" rounded-lg transition-shadow duration-300">
-            <div
-                className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4"
-            >
-                <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
+        <div className="rounded-lg transition-shadow duration-300">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:h-72 sm:justify-center gap-4">
+                <div className="sm:h-48 sm:w-48 flex-shrink-0 border rounded-md overflow-hidden">
                     <a href="/">
                         <img
-                            src={`${getImgUrl(producto.coverImage)}`}
+                            src={`${getImgUrl(producto?.coverImage)}`}
                             alt=""
-                            className="w-full bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
+                            className="h-full w-full object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
                         />
                     </a>
                 </div>
 
                 <div>
-                    <a href="/">
-                    <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
-                        Book Title
-                    </h3></a>
-                    <p className="text-gray-600 mb-5">Book Description</p>
-                    <p className="font-medium mb-5">
-                    $80 <span className="line-through font-normal ml-2">$100</span>
+                    <Link to={`/productos/${producto.id}`}>
+                        <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
+                            {producto?.title}
+                        </h3>
+                    </Link>
+                    <p className="text-gray-600 mb-5">
+                        {producto?.description.length > 80 ? `${producto?.description.slice(0, 80)} ...` : producto.description}
                     </p>
-                    <button className="btn-primary px-6 space-x-1 flex items-center gap-1 ">
+                    <p className="font-medium mb-5">
+                        ${producto?.newPrice}{' '}
+                        <span className="line-through font-normal ml-2">${producto?.oldPrice}</span>
+                    </p>
+                    <button className="btn-primary px-6 space-x-1 flex items-center gap-1">
                         <FiShoppingCart className="" />
                         <span>Add to Cart</span>
                     </button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ProductsCard
+export default ProductsCard;

@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { DiHtml5DeviceAccess } from 'react-icons/di';
+import React, { useEffect, useRef, useState } from 'react'
 import ProductsCard from '../products/ProductsCard';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-const categories = ["Elegí la categoria", "Sol", "Lectura", "Computadora", "Deportivos", "Tecnología", "Moda  "]
+const categories = ["Elegí la categoria", "Sol", "Lectura", "Computadora", "Deportivos", "Niños", "Moda"]
 
 const TopSellers = () => {
     const [productos, setProductos] = useState([]);
@@ -34,11 +41,45 @@ const TopSellers = () => {
                 }
             </select>
         </div>
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        navigation={true}
+        
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+          1180: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+
         {
-            filteredProductos.map((productos, index)  => (
-                <ProductsCard key={index} producto={productos}/>
+            filteredProductos.length > 0 && filteredProductos.map((productos, index)  => (
+                <SwiperSlide key={index}>
+                    <ProductsCard  producto={productos}/>
+                </SwiperSlide>
+                
             ))
         }
+
+        
+      </Swiper>
+        
     </div>
   )
 }

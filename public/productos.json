@@ -5,7 +5,7 @@
       "description": "Protege tus ojos de los rayos UV con estos lentes de sol polarizados de alta calidad.",
       "category": "Sol",
       "trending": true,
-      "coverImage": "lentes-1.png",
+      "coverImage": "lentes-1.jpg",
       "oldPrice": 79.99,
       "newPrice": 59.99
     },
@@ -15,7 +15,7 @@
       "description": "Diseño clásico con lentes de alta claridad para una lectura cómoda.",
       "category": "Lectura",
       "trending": true,
-      "coverImage": "lentes-2.png",
+      "coverImage": "lentes-2.jpg",
       "oldPrice": 49.99,
       "newPrice": 29.99
     },
@@ -25,7 +25,7 @@
       "description": "Protege tus ojos de la luz azul mientras trabajas con estas gafas antireflejo.",
       "category": "Computadora",
       "trending": true,
-      "coverImage": "lentes-3.png",
+      "coverImage": "lentes-3.jpg",
       "oldPrice": 89.99,
       "newPrice": 69.99
     },
@@ -35,7 +35,7 @@
       "description": "Ideales para actividades al aire libre, con protección UV y resistencia a impactos.",
       "category": "Deportivos",
       "trending": false,
-      "coverImage": "lentes-4.png",
+      "coverImage": "lentes-4.jpg",
       "oldPrice": 99.99,
       "newPrice": 79.99
     },
@@ -45,17 +45,17 @@
       "description": "Lentes de sol con polarizado para reducir el deslumbramiento al conducir de día.",
       "category": "Moda",
       "trending": true,
-      "coverImage": "lentes-5.png",
+      "coverImage": "lentes-5.jpg",
       "oldPrice": 59.99,
       "newPrice": 39.99
     },
     {
       "_id": 6,
-      "title": "Lentes de Seguridad Industriales",
-      "description": "Protege tus ojos en el trabajo con estos lentes de seguridad resistentes.",
-      "category": "Tecnología",
+      "title": "Lentes niños filtro uv",
+      "description": "Protege los ojos de la fatiga ocular y el daño causado por la luz azul de dispositivos electrónicos .",
+      "category": "Niños",
       "trending": false,
-      "coverImage": "lentes-6.png",
+      "coverImage": "lentes-6.jpg",
       "oldPrice": 74.99,
       "newPrice": 54.99
     },
@@ -65,17 +65,17 @@
       "description": "Estilo retro con protección UV para un look clásico y funcional.",
       "category": "Sol",
       "trending": true,
-      "coverImage": "lentes-7.png",
+      "coverImage": "lentes-7.jpg",
       "oldPrice": 119.99,
       "newPrice": 99.99
     },
     {
       "_id": 8,
-      "title": "Gafas de Realidad Aumentada",
-      "description": "Experimenta la realidad aumentada con estas gafas de alta tecnología.",
-      "category": "Tecnología",
+      "title": "Lentes niño policarbonato",
+      "description": "Resistentes a los impactos.",
+      "category": "Niños",
       "trending": true,
-      "coverImage": "lentes-8.png",
+      "coverImage": "lentes-8.jpg",
       "oldPrice": 299.99,
       "newPrice": 249.99
     },
@@ -85,7 +85,7 @@
       "description": "Lentes especializados para actividades acuáticas, con protección UV y repelente de agua.",
       "category": "Deportivos",
       "trending": false,
-      "coverImage": "lentes-9.png",
+      "coverImage": "lentes-9.jpg",
       "oldPrice": 34.99,
       "newPrice": 24.99
     },
@@ -95,7 +95,7 @@
       "description": "Comodidad y estilo con estas gafas de sol de última moda para mujer.",
       "category": "Moda",
       "trending": true,
-      "coverImage": "lentes-10.png",
+      "coverImage": "lentes-10.jpg",
       "oldPrice": 64.99,
       "newPrice": 44.99
     },
@@ -105,7 +105,7 @@
       "description": "Ideales para actividades al aire libre, estos lentes deportivos son resistentes y flexibles.",
       "category": "Deportivos",
       "trending": true,
-      "coverImage": "lentes-21.png",
+      "coverImage": "lentes-11.jpg",
       "oldPrice": 45.99,
       "newPrice": 35.99
     },
@@ -115,7 +115,7 @@
       "description": "Lentes graduados con montura moderna para un look profesional.",
       "category": "Moda",
       "trending": true,
-      "coverImage": "lentes-22.png",
+      "coverImage": "lentes-12.jpg",
       "oldPrice": 89.99,
       "newPrice": 79.99
     },
@@ -125,7 +125,7 @@
       "description": "Perfectos para llevar en el bolsillo, estos lentes de lectura son compactos y ligeros.",
       "category": "Lectura",
       "trending": false,
-      "coverImage": "lentes-23.png",
+      "coverImage": "lentes-13.jpg",
       "oldPrice": 19.99,
       "newPrice": 14.99
     },
@@ -135,7 +135,7 @@
       "description": "Lentes de sol con protección polarizada para una conducción más segura y sin reflejos.",
       "category": "Sol",
       "trending": true,
-      "coverImage": "lentes-24.png",
+      "coverImage": "lentes-14.jpg",
       "oldPrice": 49.99,
       "newPrice": 39.99
     },
@@ -145,7 +145,7 @@
       "description": "Lentes especiales para proteger tus ojos de la luz azul emitida por pantallas digitales.",
       "category": "Computadora",
       "trending": true,
-      "coverImage": "lentes-25.png",
+      "coverImage": "lentes-15.jpg",
       "oldPrice": 59.99,
       "newPrice": 44.99
     },
@@ -155,7 +155,7 @@
       "description": "Ideales para personas que pasan mucho tiempo frente a una computadora.",
       "category": "Computadora",
       "trending": false,
-      "coverImage": "lentes-26.png",
+      "coverImage": "lentes-16.jpg",
       "oldPrice": 79.99,
       "newPrice": 64.99
     },
@@ -165,7 +165,7 @@
       "description": "Montura retro para un look clásico y elegante en días soleados.",
       "category": "Sol",
       "trending": true,
-      "coverImage": "lentes-27.png",
+      "coverImage": "lentes-17.jpg",
       "oldPrice": 39.99,
       "newPrice": 29.99
     },
@@ -175,7 +175,7 @@
       "description": "Protege tus ojos del sol mientras practicas deporte al aire libre.",
       "category": "Deportivos",
       "trending": false,
-      "coverImage": "lentes-28.png",
+      "coverImage": "lentes-18.jpg",
       "oldPrice": 54.99,
       "newPrice": 44.99
     },
@@ -185,7 +185,7 @@
       "description": "Lentes graduados con un diseño moderno de montura transparente.",
       "category": "Moda",
       "trending": true,
-      "coverImage": "lentes-29.png",
+      "coverImage": "lentes-19.jpg",
       "oldPrice": 69.99,
       "newPrice": 59.99
     },
@@ -195,7 +195,7 @@
       "description": "Lentes de lectura con un diseño elegante para usar en casa o la oficina.",
       "category": "Lectura",
       "trending": false,
-      "coverImage": "lentes-30.png",
+      "coverImage": "lentes-20.jpg",
       "oldPrice": 29.99,
       "newPrice": 24.99
     }
