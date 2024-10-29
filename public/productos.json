@@ -1,203 +1,202 @@
 [
-    {
-      "_id": 1,
-      "title": "Lentes de Sol Polarizados",
-      "description": "Protege tus ojos de los rayos UV con estos lentes de sol polarizados de alta calidad.",
-      "category": "Sol",
-      "trending": true,
-      "coverImage": "lentes-1.jpg",
-      "oldPrice": 79.99,
-      "newPrice": 59.99
-    },
-    {
-      "_id": 2,
-      "title": "Gafas para Lectura Clásicas",
-      "description": "Diseño clásico con lentes de alta claridad para una lectura cómoda.",
-      "category": "Lectura",
-      "trending": true,
-      "coverImage": "lentes-2.jpg",
-      "oldPrice": 49.99,
-      "newPrice": 29.99
-    },
-    {
-      "_id": 3,
-      "title": "Lentes para Computadora Antireflejo",
-      "description": "Protege tus ojos de la luz azul mientras trabajas con estas gafas antireflejo.",
-      "category": "Computadora",
-      "trending": true,
-      "coverImage": "lentes-3.jpg",
-      "oldPrice": 89.99,
-      "newPrice": 69.99
-    },
-    {
-      "_id": 4,
-      "title": "Lentes Deportivos Resistentes",
-      "description": "Ideales para actividades al aire libre, con protección UV y resistencia a impactos.",
-      "category": "Deportivos",
-      "trending": false,
-      "coverImage": "lentes-4.jpg",
-      "oldPrice": 99.99,
-      "newPrice": 79.99
-    },
-    {
-      "_id": 5,
-      "title": "Gafas de Sol Polarizadas para Manejo",
-      "description": "Lentes de sol con polarizado para reducir el deslumbramiento al conducir de día.",
-      "category": "Moda",
-      "trending": true,
-      "coverImage": "lentes-5.jpg",
-      "oldPrice": 59.99,
-      "newPrice": 39.99
-    },
-    {
-      "_id": 6,
-      "title": "Lentes niños filtro uv",
-      "description": "Protege los ojos de la fatiga ocular y el daño causado por la luz azul de dispositivos electrónicos .",
-      "category": "Niños",
-      "trending": false,
-      "coverImage": "lentes-6.jpg",
-      "oldPrice": 74.99,
-      "newPrice": 54.99
-    },
-    {
-      "_id": 7,
-      "title": "Lentes de Sol Vintage",
-      "description": "Estilo retro con protección UV para un look clásico y funcional.",
-      "category": "Sol",
-      "trending": true,
-      "coverImage": "lentes-7.jpg",
-      "oldPrice": 119.99,
-      "newPrice": 99.99
-    },
-    {
-      "_id": 8,
-      "title": "Lentes niño policarbonato",
-      "description": "Resistentes a los impactos.",
-      "category": "Niños",
-      "trending": true,
-      "coverImage": "lentes-8.jpg",
-      "oldPrice": 299.99,
-      "newPrice": 249.99
-    },
-    {
-      "_id": 9,
-      "title": "Gafas de Sol para Deportes Acuáticos",
-      "description": "Lentes especializados para actividades acuáticas, con protección UV y repelente de agua.",
-      "category": "Deportivos",
-      "trending": false,
-      "coverImage": "lentes-9.jpg",
-      "oldPrice": 34.99,
-      "newPrice": 24.99
-    },
-    {
-      "_id": 10,
-      "title": "Gafas de Moda para Mujer",
-      "description": "Comodidad y estilo con estas gafas de sol de última moda para mujer.",
-      "category": "Moda",
-      "trending": true,
-      "coverImage": "lentes-10.jpg",
-      "oldPrice": 64.99,
-      "newPrice": 44.99
-    },
-    {
-      "_id": 21,
-      "title": "Lentes Deportivos Flexibles",
-      "description": "Ideales para actividades al aire libre, estos lentes deportivos son resistentes y flexibles.",
-      "category": "Deportivos",
-      "trending": true,
-      "coverImage": "lentes-11.jpg",
-      "oldPrice": 45.99,
-      "newPrice": 35.99
-    },
-    {
-      "_id": 22,
-      "title": "Gafas Graduadas de Estilo Moderno",
-      "description": "Lentes graduados con montura moderna para un look profesional.",
-      "category": "Moda",
-      "trending": true,
-      "coverImage": "lentes-12.jpg",
-      "oldPrice": 89.99,
-      "newPrice": 79.99
-    },
-    {
-      "_id": 23,
-      "title": "Lentes de Lectura Compactos",
-      "description": "Perfectos para llevar en el bolsillo, estos lentes de lectura son compactos y ligeros.",
-      "category": "Lectura",
-      "trending": false,
-      "coverImage": "lentes-13.jpg",
-      "oldPrice": 19.99,
-      "newPrice": 14.99
-    },
-    {
-      "_id": 24,
-      "title": "Gafas de Sol Polarizadas para Conducir",
-      "description": "Lentes de sol con protección polarizada para una conducción más segura y sin reflejos.",
-      "category": "Sol",
-      "trending": true,
-      "coverImage": "lentes-14.jpg",
-      "oldPrice": 49.99,
-      "newPrice": 39.99
-    },
-    {
-      "_id": 25,
-      "title": "Gafas con Filtro de Luz Azul",
-      "description": "Lentes especiales para proteger tus ojos de la luz azul emitida por pantallas digitales.",
-      "category": "Computadora",
-      "trending": true,
-      "coverImage": "lentes-15.jpg",
-      "oldPrice": 59.99,
-      "newPrice": 44.99
-    },
-    {
-      "_id": 26,
-      "title": "Lentes Antirreflejo para Computadora",
-      "description": "Ideales para personas que pasan mucho tiempo frente a una computadora.",
-      "category": "Computadora",
-      "trending": false,
-      "coverImage": "lentes-16.jpg",
-      "oldPrice": 79.99,
-      "newPrice": 64.99
-    },
-    {
-      "_id": 27,
-      "title": "Gafas Vintage de Sol",
-      "description": "Montura retro para un look clásico y elegante en días soleados.",
-      "category": "Sol",
-      "trending": true,
-      "coverImage": "lentes-17.jpg",
-      "oldPrice": 39.99,
-      "newPrice": 29.99
-    },
-    {
-      "_id": 28,
-      "title": "Lentes Deportivos con Protección UV",
-      "description": "Protege tus ojos del sol mientras practicas deporte al aire libre.",
-      "category": "Deportivos",
-      "trending": false,
-      "coverImage": "lentes-18.jpg",
-      "oldPrice": 54.99,
-      "newPrice": 44.99
-    },
-    {
-      "_id": 29,
-      "title": "Gafas Graduadas con Montura Transparente",
-      "description": "Lentes graduados con un diseño moderno de montura transparente.",
-      "category": "Moda",
-      "trending": true,
-      "coverImage": "lentes-19.jpg",
-      "oldPrice": 69.99,
-      "newPrice": 59.99
-    },
-    {
-      "_id": 30,
-      "title": "Gafas de Lectura con Estilo",
-      "description": "Lentes de lectura con un diseño elegante para usar en casa o la oficina.",
-      "category": "Lectura",
-      "trending": false,
-      "coverImage": "lentes-20.jpg",
-      "oldPrice": 29.99,
-      "newPrice": 24.99
-    }
-  ]
-  
+  {
+    "_id": 1,
+    "title": "Ray-Ban",
+    "description": "Código: RB15456",
+    "category": "Sol",
+    "trending": true,
+    "coverImage": "lentes-1.jpg",
+    "oldPrice": 79.99,
+    "newPrice": 59.99
+  },
+  {
+    "_id": 2,
+    "title": "Paula Chen",
+    "description": "Código: PC83472",
+    "category": "Lectura",
+    "trending": true,
+    "coverImage": "lentes-2.jpg",
+    "oldPrice": 49.99,
+    "newPrice": 29.99
+  },
+  {
+    "_id": 3,
+    "title": "Danver",
+    "description": "Código: DV90321",
+    "category": "Computadora",
+    "trending": true,
+    "coverImage": "lentes-3.jpg",
+    "oldPrice": 89.99,
+    "newPrice": 69.99
+  },
+  {
+    "_id": 4,
+    "title": "Rusty",
+    "description": "Código: RS48213",
+    "category": "Deportivos",
+    "trending": false,
+    "coverImage": "lentes-4.jpg",
+    "oldPrice": 99.99,
+    "newPrice": 79.99
+  },
+  {
+    "_id": 5,
+    "title": "Oakley",
+    "description": "Código: OK56732",
+    "category": "Moda",
+    "trending": true,
+    "coverImage": "lentes-5.jpg",
+    "oldPrice": 59.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 6,
+    "title": "Vulk",
+    "description": "Código: VK29876",
+    "category": "Niños",
+    "trending": false,
+    "coverImage": "lentes-6.jpg",
+    "oldPrice": 74.99,
+    "newPrice": 54.99
+  },
+  {
+    "_id": 7,
+    "title": "Guess",
+    "description": "Código: GS34892",
+    "category": "Sol",
+    "trending": true,
+    "coverImage": "lentes-7.jpg",
+    "oldPrice": 119.99,
+    "newPrice": 99.99
+  },
+  {
+    "_id": 8,
+    "title": "Hawkers",
+    "description": "Código: HW12987",
+    "category": "Niños",
+    "trending": true,
+    "coverImage": "lentes-8.jpg",
+    "oldPrice": 299.99,
+    "newPrice": 249.99
+  },
+  {
+    "_id": 9,
+    "title": "Arnette",
+    "description": "Código: AN67543",
+    "category": "Deportivos",
+    "trending": false,
+    "coverImage": "lentes-9.jpg",
+    "oldPrice": 34.99,
+    "newPrice": 24.99
+  },
+  {
+    "_id": 10,
+    "title": "Prada",
+    "description": "Código: PR54678",
+    "category": "Moda",
+    "trending": true,
+    "coverImage": "lentes-10.jpg",
+    "oldPrice": 64.99,
+    "newPrice": 44.99
+  },
+  {
+    "_id": 21,
+    "title": "Nike",
+    "description": "Código: NK10987",
+    "category": "Deportivos",
+    "trending": true,
+    "coverImage": "lentes-11.jpg",
+    "oldPrice": 45.99,
+    "newPrice": 35.99
+  },
+  {
+    "_id": 22,
+    "title": "Vogue",
+    "description": "Código: VG20456",
+    "category": "Moda",
+    "trending": true,
+    "coverImage": "lentes-12.jpg",
+    "oldPrice": 89.99,
+    "newPrice": 79.99
+  },
+  {
+    "_id": 23,
+    "title": "Tom Ford",
+    "description": "Código: TF67234",
+    "category": "Lectura",
+    "trending": false,
+    "coverImage": "lentes-13.jpg",
+    "oldPrice": 19.99,
+    "newPrice": 14.99
+  },
+  {
+    "_id": 24,
+    "title": "Persol",
+    "description": "Código: PS78901",
+    "category": "Sol",
+    "trending": true,
+    "coverImage": "lentes-14.jpg",
+    "oldPrice": 49.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 25,
+    "title": "Fendi",
+    "description": "Código: FD45678",
+    "category": "Computadora",
+    "trending": true,
+    "coverImage": "lentes-15.jpg",
+    "oldPrice": 59.99,
+    "newPrice": 44.99
+  },
+  {
+    "_id": 26,
+    "title": "Gucci",
+    "description": "Código: GC21345",
+    "category": "Computadora",
+    "trending": false,
+    "coverImage": "lentes-16.jpg",
+    "oldPrice": 79.99,
+    "newPrice": 64.99
+  },
+  {
+    "_id": 27,
+    "title": "Michael Kors",
+    "description": "Código: MK85432",
+    "category": "Sol",
+    "trending": true,
+    "coverImage": "lentes-17.jpg",
+    "oldPrice": 39.99,
+    "newPrice": 29.99
+  },
+  {
+    "_id": 28,
+    "title": "Puma",
+    "description": "Código: PM38241",
+    "category": "Deportivos",
+    "trending": false,
+    "coverImage": "lentes-18.jpg",
+    "oldPrice": 54.99,
+    "newPrice": 44.99
+  },
+  {
+    "_id": 29,
+    "title": "Chanel",
+    "description": "Código: CH90234",
+    "category": "Moda",
+    "trending": true,
+    "coverImage": "lentes-19.jpg",
+    "oldPrice": 69.99,
+    "newPrice": 59.99
+  },
+  {
+    "_id": 30,
+    "title": "Carolina Herrera",
+    "description": "Código: CH56789",
+    "category": "Lectura",
+    "trending": false,
+    "coverImage": "lentes-20.jpg",
+    "oldPrice": 29.99,
+    "newPrice": 24.99
+  }
+]
