@@ -52,7 +52,7 @@ const lensInfo = [
 const LensInfo = () => {
   return (
     <div className='p-16  bg-[#B6A28E]'>
-      <h2 className='text-3xl font-semibold mb-6'>Tipos de Lentes y sus Beneficios</h2>
+      <h2 className='text-3xl font-semibold mb-6 text-white'>Tipos de Lentes y sus Beneficios</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
