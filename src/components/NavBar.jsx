@@ -23,7 +23,7 @@ const NavBar = () => {
     
     const currentUser = true;
   return (
-    <header className="max-w-screen-2x1 mx-auto px-4 py-6">
+    <header className="max-w-screen-2x1 mx-auto px-4 py-6 bg-[#DCE4C9]">
         <nav className="flex justify-between items-center">
             {/* left side */}
             <div className='flex items-center md:gap-16 gap-4'>
@@ -34,7 +34,7 @@ const NavBar = () => {
                 {/* search input */}
                 <div className='relative sm:w-72 w-40 space-x-2'>
                 <IoSearchSharp className='absolute inline-block left-3 inset-y-2'/>
-                <input type="text" placeholder='Search here' className='bg-[#EAEAEA] w-full py-1 md:px-6 rounded-md focus:outline-none'/>
+                <input type="text" placeholder='Buscar aquí' className='bg-[#EAEAEA] w-full py-1 md:px-6 rounded-md focus:outline-none'/>
                 </div>
             </div>
 

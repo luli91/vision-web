@@ -19,7 +19,7 @@ const NewSeason = () => {
     }, [])
 
   return (
-    <div className='py-16'>
+    <div className='py-16 px-4 bg-[#FBFBFB]'>
       <h2 className='text-3xl font-semibold mb-6'> Nueva Temporada</h2>
       <Swiper
         slidesPerView={1}
