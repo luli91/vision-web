@@ -2,10 +2,16 @@ import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button'; 
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/Cart/CartSlice';
 
 const ProductsCard = ({ producto }) => {
-    console.log(getImgUrl(producto.coverImage));
+    const dispatch = useDispatch();
 
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product))
+    }
     return (
         <div className="rounded-lg transition-shadow duration-300">
             <div className="flex flex-col sm:flex-row sm:items-center sm:h-72 sm:justify-center gap-4">
@@ -32,10 +38,12 @@ const ProductsCard = ({ producto }) => {
                         ${producto?.newPrice}{' '}
                         <span className="line-through font-normal ml-2">${producto?.oldPrice}</span>
                     </p>
-                    <button className="btn-primary px-6 space-x-1 flex items-center gap-1">
+                    <Button 
+                    onClick={()=> handleAddToCart(producto)}
+                    color="warning" className="px-6 space-x-1 flex items-center gap-1">
                         <FiShoppingCart className="" />
-                        <span>Add to Cart</span>
-                    </button>
+                        <span>Agregar al carrito</span>
+                    </Button>
                 </div>
             </div>
         </div>

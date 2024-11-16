@@ -27,7 +27,7 @@ const TopSellers = () => {
     console.log(filteredProductos);
     
   return (
-    <div className='py-10 px-4 bg-[#FBFBFB]'>
+    <div className='py-10 px-4'>
         <h2 className='text-3xl font-semibold mb-6'> Top Sellers</h2>
         {/* category filtering */}
         <div className='mb-8 flex items-center'>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { FaGoogle } from 'react-icons/fa6';
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
+import Button from '@mui/material/Button'; 
 
 const Register = () => {
   const[message, setMessage]= useState("")
@@ -45,16 +45,19 @@ const Register = () => {
                     message && <p className='text-orange-400 text-xs italic mb-3'>{message}</p>
                 }
                 <div>
-                    <button className='btn-primary text-white font-bold py-2 px-4 rounded focus:outline-none'>Guardar</button>
+                    <Button
+                        variant="outlined" color="warning">
+                        Guardar
+                    </Button>
                 </div>
             </form>
-            <p className='align-baseline font-medium mt-4 text-sm'>¿Tenés un cuenta? Por favor <Link to="/login" className="text-orange-400 hover:text-green-200">Login</Link></p>
+            <p className='align-baseline font-medium mt-4 text-sm'>¿Tenés un cuenta? Por favor <Link to="/login" className="text-primary hover:text-orange-400">Login</Link></p>
             <div className='mt-4'>
-                <button 
+            <button 
                 onClick={handleGoogleSignIn}
-                className='w-full flex flex-wrap gap-1 items-center justify-center btn-primary hover:bg-green-950 text-white font-bold py-2 px-4 rounded focus:outline-none'>
-                    <FaGoogle className='mr-2'/>
-                Registrate con Google
+                className='w-full text-slate-500 font-bold flex flex-wrap gap-3 items-center justify-center py-2 px-4 rounded focus:outline-none text-lg border border-blue-gray-500'>
+                    <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
+                    Continuá con Google
                 </button>
             </div>
             <p className='mt-5 text-center text-gray-500 text-xs'>©2025 Nissis - Todos los derechos reservados</p>
