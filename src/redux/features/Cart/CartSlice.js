@@ -22,8 +22,7 @@ const cartSlice = createSlice({
                   });
             } else(
                 Swal.fire({
-                    title: "Already Added to the Cart",
-                    text: "No hay stock de este producto",
+                    title: "¿Estás seguro que no lo querés en el carrito?",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",

@@ -28,6 +28,10 @@ import Register from "../components/Register";
         {
           path: "/register",
           element: <Register/>,
+        },
+        {
+          path: "/cart",
+          element: <CartPage/>,
         }
       ]
     },
