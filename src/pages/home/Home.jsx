@@ -1,6 +1,7 @@
 import React from 'react'
-import Banner from '../home/Banner'
-import TopSellers from '../home/TopSellers'
+import Banner from './Banner'
+import TopSellers from './TopSellers'
+import Recommened from './Recommened'
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <>
             <Banner/>
             <TopSellers/>
+            <Recommened/>
         </>
     )
 }
