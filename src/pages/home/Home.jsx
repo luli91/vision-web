@@ -1,7 +1,8 @@
 import React from 'react'
-import Banner from './Banner'
-import TopSellers from './TopSellers'
-import Recommened from './Recommened'
+import Banner from '../home/Banner'
+import TopSellers from '../home/TopSellers'
+import NewSeason from '../home/NewSeason'
+import LensInfo from '../home/LensInfo'
 
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
         <>
             <Banner/>
             <TopSellers/>
-            <Recommened/>
+            <NewSeason/>
+            <LensInfo/>
         </>
     )
 }

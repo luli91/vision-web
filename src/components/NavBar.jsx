@@ -8,6 +8,7 @@ import { HiMiniShoppingCart } from "react-icons/hi2";
 import { HiOutlineUser } from "react-icons/hi";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from 'react-redux';
 
 const navigation = [
     {name: "Dashboard", href:"/dashboard"},
@@ -19,11 +20,12 @@ const navigation = [
 const NavBar = () => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    console.log(isDropdownOpen);
+    const cartItems = useSelector(state => state.cart.cartItems);
+    
     
     const currentUser = true;
   return (
-    <header className="max-w-screen-2x1 mx-auto px-4 py-6">
+    <header className="max-w-screen-2x1 mx-auto px-4 py-6 bg-[#DCE4C9]">
         <nav className="flex justify-between items-center">
             {/* left side */}
             <div className='flex items-center md:gap-16 gap-4'>
@@ -34,7 +36,7 @@ const NavBar = () => {
                 {/* search input */}
                 <div className='relative sm:w-72 w-40 space-x-2'>
                 <IoSearchSharp className='absolute inline-block left-3 inset-y-2'/>
-                <input type="text" placeholder='Search here' className='bg-[#EAEAEA] w-full py-1 md:px-6 rounded-md focus:outline-none'/>
+                <input type="text" placeholder='Buscar aquí' className='bg-[#EAEAEA] w-full py-1 md:px-6 rounded-md focus:outline-none'/>
                 </div>
             </div>
 
@@ -69,11 +71,14 @@ const NavBar = () => {
                 </div>
             <FaUserCircle className='size-6'/>
             <button className='hidden sm:block'>
-            <GoHeartFill className='size-6'/>
+                <GoHeartFill className='size-6'/>
             </button>
             <Link to="/cart" className='bg-primary p-1 sm:px-6 px-2 flex items-center'>
             <HiMiniShoppingCart className=''/>
-            <span className='text-sm font-semibold sm:ml-1'>0</span>
+            {
+                cartItems.length > 0 ? <span className='text-sm font-semibold sm:ml-1'>{cartItems.length}</span> : <span className='text-sm font-semibold sm:ml-1'>0</span>
+            }
+            
             </Link>
             </div>
         </nav>

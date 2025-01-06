@@ -2,9 +2,18 @@ import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/Cart/CartSlice';
 
 const ProductsCard = ({ producto }) => {
-    console.log(getImgUrl(producto.coverImage));
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.cartItems);
+
+    const handleAddToCart = (product) => {
+        console.log('Producto a agregar:', product);
+        dispatch(addToCart(product));
+    };
 
     return (
         <div className="rounded-lg transition-shadow duration-300">
@@ -29,13 +38,14 @@ const ProductsCard = ({ producto }) => {
                         {producto?.description.length > 80 ? `${producto?.description.slice(0, 80)} ...` : producto.description}
                     </p>
                     <p className="font-medium mb-5">
-                        ${producto?.newPrice}{' '}
-                        <span className="line-through font-normal ml-2">${producto?.oldPrice}</span>
+                        ${producto?.newPrice} <span className="line-through font-normal ml-2">${producto?.oldPrice}</span>
                     </p>
-                    <button className="btn-primary px-6 space-x-1 flex items-center gap-1">
+                    <Button
+                        onClick={() => handleAddToCart(producto)}
+                        color="warning" className="px-6 space-x-1 flex items-center gap-1">
                         <FiShoppingCart className="" />
-                        <span>Add to Cart</span>
-                    </button>
+                        <span>Agregar al carrito</span>
+                    </Button>
                 </div>
             </div>
         </div>
