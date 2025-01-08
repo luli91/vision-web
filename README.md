@@ -1,5 +1,8 @@
 vision web
 
+npm run dev para ejecutar frontend
+npm run start para ejecutar el backend
+
 •npm create vite@latest - https://vite.dev/guide/
 
 •npm install -D tailwindcss postcss autoprefixer
