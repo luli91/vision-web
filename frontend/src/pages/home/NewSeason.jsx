@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -8,24 +7,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import ProductsCard from '../products/ProductsCard';
+import { useFetchAllProductsQuery } from '../../redux/features/Cart/productsApi';
 
 const NewSeason = () => {
-  const [productos, setProductos] = useState([]);
-
-    useEffect (() => {
-        fetch("productos.json")
-        .then(res => res.json())
-        .then((data) => setProductos(data))
-    }, [])
+  const { data: products = []} = useFetchAllProductsQuery();
 
   return (
     <div className='py-16 px-4'>
-      <h2 className='text-3xl font-semibold mb-6'> Nueva Temporada</h2>
+      <h2 className='text-3xl font-semibold mb-6'>Nueva Temporada</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
         navigation={true}
-        
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -45,22 +38,17 @@ const NewSeason = () => {
           },
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-
-        {
-            productos.length > 0 && productos.slice(8, 18).map((productos, index)  => (
-                <SwiperSlide key={index}>
-                    <ProductsCard  producto={productos}/>
-                </SwiperSlide>
-                
-            ))
-        }
-
-        
+        className='mySwiper'>
+        {products.length > 0 &&
+          products.slice(8, 18).map((product, index) => (
+            <SwiperSlide key={index}>
+              <ProductsCard product={product} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default NewSeason
+export default NewSeason;
+

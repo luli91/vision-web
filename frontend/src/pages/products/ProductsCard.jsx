@@ -2,16 +2,13 @@ import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import { useSelector, useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/features/Cart/CartSlice';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/Cart/cartSlice';
 
-const ProductsCard = ({ producto }) => {
+const ProductsCard = ({ product }) => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart.cartItems);
 
     const handleAddToCart = (product) => {
-        console.log('Producto a agregar:', product);
         dispatch(addToCart(product));
     };
 
@@ -19,33 +16,33 @@ const ProductsCard = ({ producto }) => {
         <div className="rounded-lg transition-shadow duration-300">
             <div className="flex flex-col sm:flex-row sm:items-center sm:h-72 sm:justify-center gap-4">
                 <div className="h-60 sm:w-48 flex-shrink-0 border rounded-md overflow-hidden">
-                    <a href="/">
+                    <Link to={`/products/${product._id}`}>
                         <img
-                            src={`${getImgUrl(producto?.coverImage)}`}
-                            alt=""
+                            src={`${getImgUrl(product.coverImage)}`}
+                            alt={product.title}
                             className="h-full w-full object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 <div>
-                    <Link to={`/productos/${producto.id}`}>
+                    <Link to={`/products/${product._id}`}>
                         <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
-                            {producto?.title}
+                            {product.title}
                         </h3>
                     </Link>
                     <p className="text-gray-600 mb-5">
-                        {producto?.description.length > 80 ? `${producto?.description.slice(0, 80)} ...` : producto.description}
+                        {product.description.length > 80 ? `${product.description.slice(0, 80)} ...` : product.description}
                     </p>
                     <p className="font-medium mb-5">
-                        ${producto?.newPrice} <span className="line-through font-normal ml-2">${producto?.oldPrice}</span>
+                        ${product.newPrice} <span className="line-through font-normal ml-2">${product.oldPrice}</span>
                     </p>
-                    <Button
-                        onClick={() => handleAddToCart(producto)}
-                        color="warning" className="px-6 space-x-1 flex items-center gap-1">
+                    <button
+                        onClick={() => handleAddToCart(product)}
+                        className="btn-primary px-6 space-x-1 flex items-center gap-1">
                         <FiShoppingCart className="" />
                         <span>Agregar al carrito</span>
-                    </Button>
+                    </button>
                 </div>
             </div>
         </div>

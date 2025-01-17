@@ -23,7 +23,7 @@ main().then(() => console.log("MongoDB connect sucessfully")).catch(err => conso
 async function main() {
   await mongoose.connect(process.env.DB_URL);
   app.use('/', (req, res) => {
-    res.send('dsfsdg');
+    res.send('Book Store Server is running!');
   });
 }
 

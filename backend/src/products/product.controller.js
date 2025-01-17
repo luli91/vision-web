@@ -27,7 +27,7 @@ const getSingleProduct = async (req, res) => {
         const {id} = req.params;
         const product = await Product.findById(id);
         if (!product){
-            res.status(404).send({message: "Product not found", book: newProduct})
+            res.status(404).send({message: "Product not found"})
         }
         res.status(200).send(product)
     } catch (error) {
