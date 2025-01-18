@@ -2,13 +2,13 @@ import React from 'react'
 import { FaBars } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { GoHeartFill } from "react-icons/go";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { HiOutlineUser } from "react-icons/hi";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
+import { useAuth } from '../context/AuthContext';
 
 const navigation = [
     {name: "Dashboard", href:"/dashboard"},
@@ -22,8 +22,12 @@ const NavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const cartItems = useSelector(state => state.cart.cartItems);
     
+    const {currentUser, logout} = useAuth()
     
-    const currentUser = true;
+    const handleLogOut = () => {
+        logout()
+    }
+
   return (
     <header className="max-w-screen-2x1 mx-auto px-4 py-6 bg-[#DCE4C9]">
         <nav className="flex justify-between items-center">
@@ -62,6 +66,11 @@ const NavBar = () => {
                                                 </li>
                                             ))
                                         }
+                                        <li>
+                                            <button
+                                            onClick={handleLogOut}
+                                            className='block px-4 py-2 text-sm hover:bg-gray-100'>Salir</button>
+                                        </li>
                                     </ul>
                                 </div>
                             )
@@ -69,7 +78,6 @@ const NavBar = () => {
                         </> : <Link to="/login">< HiOutlineUser className="size-6" /></Link>
                     }
                 </div>
-            <FaUserCircle className='size-6'/>
             <button className='hidden sm:block'>
                 <GoHeartFill className='size-6'/>
             </button>

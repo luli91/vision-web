@@ -6,6 +6,7 @@ import Register from "../components/Register";
 import Cartpage from "../pages/products/Cartpage";
 import CheckoutPage from "../pages/products/CheckoutPage";
 import SingleProduct from "../pages/products/SingleProduct";
+import PrivateRoute from "./PrivateRoute";
   
   const router = createBrowserRouter([
     {
@@ -38,7 +39,7 @@ import SingleProduct from "../pages/products/SingleProduct";
         },
         {
           path: "/checkout",
-          element: <CheckoutPage/>,
+          element: <PrivateRoute><CheckoutPage/></PrivateRoute>,
         },
         {
           path: "/products/:id",
