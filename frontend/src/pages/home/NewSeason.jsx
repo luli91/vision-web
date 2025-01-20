@@ -7,7 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import ProductsCard from '../products/ProductsCard';
-import { useFetchAllProductsQuery } from '../../redux/features/Cart/productsApi';
+import { useFetchAllProductsQuery } from '../../redux/features/products/productsApi';
+
 
 const NewSeason = () => {
   const { data: products = []} = useFetchAllProductsQuery();

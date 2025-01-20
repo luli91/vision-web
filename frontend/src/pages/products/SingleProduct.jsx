@@ -3,8 +3,10 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/features/Cart/cartSlice';
-import { useFetchProductByIdQuery } from '../../redux/features/Cart/productsApi';
+import { addToCart } from '../../redux/features/Cart/CartSlice';
+import { useFetchProductByIdQuery } from '../../redux/features/products/productsApi';
+
+
 
 const SingleProduct = () => {
     const { id } = useParams();

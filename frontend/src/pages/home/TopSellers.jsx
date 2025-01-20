@@ -5,7 +5,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { useFetchAllProductsQuery } from '../../redux/features/Cart/productsApi';
+import { useFetchAllProductsQuery } from '../../redux/features/products/productsApi';
+
 
 const categories = ["Elegí la categoria", "Sol", "Lectura", "Computadora", "Deportivos", "Niños", "Moda"];
 
