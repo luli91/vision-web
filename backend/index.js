@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-
 const mongoose = require('mongoose');
 
 const port = process.env.PORT || 5000;
@@ -16,10 +15,12 @@ app.use(cors({
 
 //routes
 const productRoutes = require('./src/products/product.route');
-const orderRoutes = require('./src/orders/order.route')
+const orderRoutes = require('./src/orders/order.route');
+const userRoutes = require("./src/users/user.router")
 
 app.use("/api/products", productRoutes)
 app.use("/api/orders", orderRoutes)
+app.use("/api/auth", userRoutes)
 
 
 main().then(() => console.log("MongoDB connect sucessfully")).catch(err => console.log(err));

@@ -8,6 +8,8 @@ import CheckoutPage from "../pages/products/CheckoutPage";
 import SingleProduct from "../pages/products/SingleProduct";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/products/OrderPage";
+import AdminRoute from "./AdminRoute";
+import AdminLogin from "../components/AdminLogin";
   
   const router = createBrowserRouter([
     {
@@ -45,9 +47,35 @@ import OrderPage from "../pages/products/OrderPage";
         {
           path: "/products/:id",
           element: <SingleProduct/>,
-        }
+        },
       ]
     },
+    {
+      path:"/admin",
+      element: <AdminLogin/>
+    },
+    {
+      path: "/dashboard",
+      element: <AdminRoute><div>Admin Dashboard</div></AdminRoute>,
+      chidren: [
+        {
+          path: "",
+          element: <AdminRoute><div>Dashboard Home</div></AdminRoute>
+        },
+        {
+          path: "add-new-product",
+          element: <AdminRoute><div>Add new product</div></AdminRoute>
+        },
+        {
+          path: "edit-product/:id",
+          element: <AdminRoute><div>Edit product</div></AdminRoute>
+        },
+        {
+          path: "manage-products",
+          element: <AdminRoute><div>Manage product</div></AdminRoute>
+        }
+      ]
+    }
   ]);
 
   export default router;
