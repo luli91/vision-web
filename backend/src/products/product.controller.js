@@ -4,7 +4,7 @@ const postAProduct = async (req,res) =>{
     try{
         const newProduct = await Product({...req.body});
         await newProduct.save();
-        res.status(200).send({message: "Product posted succesfully", book: newProduct})
+        res.status(200).send({message: "Product posted succesfully", product: newProduct})
     } catch (error){
         console.error("Error creating product", error);
         res.status(500).send({message: "Failed to create product", error})

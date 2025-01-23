@@ -16,11 +16,13 @@ app.use(cors({
 //routes
 const productRoutes = require('./src/products/product.route');
 const orderRoutes = require('./src/orders/order.route');
-const userRoutes = require("./src/users/user.router")
+const userRoutes = require("./src/users/user.router");
+const adminRoutes = require("./src/stats/admin.stats");
 
 app.use("/api/products", productRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/auth", userRoutes)
+app.use("/api/admin", adminRoutes)
 
 
 main().then(() => console.log("MongoDB connect sucessfully")).catch(err => console.log(err));
@@ -28,7 +30,7 @@ main().then(() => console.log("MongoDB connect sucessfully")).catch(err => conso
 async function main() {
   await mongoose.connect(process.env.DB_URL);
   app.use('/', (req, res) => {
-    res.send('Book Store Server is running!');
+    res.send('Store Server is running!');
   });
 }
 
