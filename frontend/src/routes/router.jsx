@@ -15,6 +15,7 @@ import Dashboard from "../pages/dashboard/DashBoard";
 import ManageProducts from "../pages/dashboard/manageProducts/ManageProducts";
 import AddProduct from "../pages/dashboard/addProduct/AddProduct";
 import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
+import FavoritePage from "../pages/products/FavoritePage";
 
   
   const router = createBrowserRouter([
@@ -31,8 +32,8 @@ import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
             element: <PrivateRoute><OrderPage/></PrivateRoute>,
         },
         {
-            path: "/about",
-            element: <h1>About</h1>,
+            path: "/favorites",
+            element: <FavoritePage/>
         },
         {
             path: "/login",

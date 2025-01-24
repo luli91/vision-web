@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBars } from "react-icons/fa6";
+import Logo from "../assets/logoSea.png";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { GoHeartFill } from "react-icons/go";
@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 import { useAuth } from '../context/AuthContext';
 
 const navigation = [
-    {name: "Dashboard", href:"/dashboard"},
     {name: "Orders", href:"/orders"},
     {name: "Cart Page", href:"/cart"},
     {name: "Check Out", href:"/checkout"},
@@ -21,12 +20,15 @@ const NavBar = () => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const cartItems = useSelector(state => state.cart.cartItems);
-    
+    const favoriteItems = useSelector(state => state.favorites.favoriteItems);
+
     const {currentUser, logout} = useAuth()
     
     const handleLogOut = () => {
         logout()
     }
+    
+    const totalCartItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className="max-w-screen-2x1 mx-auto px-4 py-6 bg-[#DCE4C9]">
@@ -34,7 +36,7 @@ const NavBar = () => {
             {/* left side */}
             <div className='flex items-center md:gap-16 gap-4'>
                 <Link to="/">
-                <FaBars className='size-6'/>
+                <img src={Logo} alt="Logo" className="w-24" />
                 </Link>
 
                 {/* search input */}
@@ -78,16 +80,17 @@ const NavBar = () => {
                         </> : <Link to="/login">< HiOutlineUser className="size-6" /></Link>
                     }
                 </div>
-            <button className='hidden sm:block'>
-                <GoHeartFill className='size-6'/>
-            </button>
-            <Link to="/cart" className='bg-primary p-1 sm:px-6 px-2 flex items-center'>
-            <HiMiniShoppingCart className=''/>
-            {
-                cartItems.length > 0 ? <span className='text-sm font-semibold sm:ml-1'>{cartItems.length}</span> : <span className='text-sm font-semibold sm:ml-1'>0</span>
-            }
-            
+                <Link to="/favorites" className='flex items-center'>
+            <GoHeartFill className='text-gray-600 hover:text-gray-800 size-6' />
             </Link>
+            <Link to="/cart" className="flex items-center">
+            <HiMiniShoppingCart className="text-gray-600 hover:text-gray-800 size-6" />
+            {totalCartItems > 0 ? (
+              <span className="text-sm font-semibold sm:ml-1">{totalCartItems}</span>
+            ) : (
+              <span className="text-sm font-semibold sm:ml-1">0</span>
+            )}
+          </Link>
             </div>
         </nav>
     </header>

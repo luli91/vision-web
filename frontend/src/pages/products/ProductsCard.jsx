@@ -1,19 +1,34 @@
 import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/features/Cart/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../redux/features/Cart/CartSlice';
+import { addToFavorites, removeFromFavorites } from '../../redux/features/Favorites/FavoriteSlice';
 
 const ProductsCard = ({ product }) => {
     const dispatch = useDispatch();
+    const favoriteItems = useSelector((state) => state.favorites.favoriteItems);
+    const isFavorite = favoriteItems.some(item => item._id === product._id);
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     };
 
+    const handleToggleFavorite = (product) => {
+        if (isFavorite) {
+            dispatch(removeFromFavorites(product));
+        } else {
+            dispatch(addToFavorites(product));
+        }
+    };
+
     return (
-        <div className="rounded-lg transition-shadow duration-300">
+        <div className="rounded-lg transition-shadow duration-300 relative">
+            <div className="absolute top-2 right-2 cursor-pointer" onClick={() => handleToggleFavorite(product)}>
+                {isFavorite ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart className="text-gray-500" />}
+            </div>
             <div className="flex flex-col sm:flex-row sm:items-center sm:h-72 sm:justify-center gap-4">
                 <div className="h-60 sm:w-48 flex-shrink-0 border rounded-md overflow-hidden">
                     <Link to={`/products/${product._id}`}>

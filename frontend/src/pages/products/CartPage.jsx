@@ -1,30 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getImgUrl } from '../../utils/getImgUrl';
-import { clearCart, removeFromCart } from '../../redux/features/Cart/CartSlice';
+import { clearCart, removeFromCart, updateQuantity  } from '../../redux/features/Cart/CartSlice';
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   console.log('Cart Items:', cartItems);
-  const dispatch = useDispatch ()
+  const dispatch = useDispatch();
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
+  useEffect(() => {
+    console.log('Calculando el nuevo total');
+    const newTotalPrice = cartItems.reduce((acc, item) => acc + (item.newPrice * item.quantity), 0).toFixed(2);
+    console.log('Nuevo Total Price:', newTotalPrice);
+    setTotalPrice(newTotalPrice);
+  }, [cartItems]);
 
   const handleRemoveFromCart = (product) => {
+    console.log('Eliminando producto:', product);
         dispatch(removeFromCart(product))
   }
 
   const handleClearCart = () => {
+    console.log('Vaciando carrito');
     dispatch(clearCart())
   }
+
+  const handleQuantityChange = (product, qty) => {
+    console.log('Cambiando cantidad para:', product, 'Cantidad:', qty);
+    if (qty > 0) {
+      dispatch(updateQuantity({ productId: product._id, quantity: qty }));
+    }
+  };
+
   return (
     <>
       <div className="flex mt-12 h-full flex-col overflow-hidden bg-white shadow-xl">
-    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-      <div className="flex items-start justify-between">
-        <div className="text-lg font-medium text-gray-900">Carrito</div>
-        <div className="ml-3 flex h-7 items-center ">
+        <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+          <div className="flex items-start justify-between">
+            <div className="text-lg font-medium text-gray-900">Carrito</div>
+        {cartItems.length > 0 && (
+          <div className="ml-3 flex h-7 items-center ">
           <button
             type="button"
             onClick={handleClearCart}
@@ -33,6 +50,7 @@ const CartPage = () => {
             <span className="">vaciar carrito</span>
           </button>
         </div>
+        )}
       </div>
 
       <div className="mt-8">
@@ -59,10 +77,19 @@ const CartPage = () => {
                       </h3>
                       <p className="sm:ml-4">${product?.newPrice}</p>
                     </div>
-                    <p className="mt-1 text-sm text-gray-500 capitalize"><strong>Category: </strong> {product?.category}</p>
+                    <p className="mt-1 text-sm text-gray-500 capitalize"><strong>Categoria: </strong> {product?.category}</p>
                   </div>
                   <div className="flex flex-1 flex-wrap items-end justify-between space-y-2 text-sm">
-                    <p className="text-gray-500"><strong>Qty:</strong> 1</p>
+                  <div className="flex items-center">
+                                <p className="text-gray-500 mr-2"><strong>Cantidad:</strong></p>
+                                <input
+                                  type="number"
+                                  value={product.quantity}
+                                  onChange={(e) => handleQuantityChange(product, parseInt(e.target.value))}
+                                  min="1"
+                                  className="w-16 ml-2 text-center border rounded"
+                                />
+                              </div>
 
                     <div className="flex">
                       <button 
@@ -99,7 +126,7 @@ const CartPage = () => {
           to="/checkout"
           className="flex items-center justify-center rounded-md border border-transparent bg-amber-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-amber-300"
         >
-          Checkout
+          Comprar
         </Link>
       </div>
       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
