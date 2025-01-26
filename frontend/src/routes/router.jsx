@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home/Home";
+import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Cartpage from "../pages/products/Cartpage";
@@ -16,6 +16,7 @@ import ManageProducts from "../pages/dashboard/manageProducts/ManageProducts";
 import AddProduct from "../pages/dashboard/addProduct/AddProduct";
 import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
 import FavoritePage from "../pages/products/FavoritePage";
+import ProductsPage from "../pages/products/ProductsPage";
 
   
   const router = createBrowserRouter([
@@ -55,6 +56,10 @@ import FavoritePage from "../pages/products/FavoritePage";
           path: "/products/:id",
           element: <SingleProduct/>,
         },
+        {
+          path: "/productos", 
+          element: <ProductsPage/>,
+        }
       ]
     },
     {
