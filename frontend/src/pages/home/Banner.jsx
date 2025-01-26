@@ -1,6 +1,6 @@
 import React from 'react'
 
-import bannerImg from "../../assets/banner.png"
+import bannerImg from "../../assets/bannerSeapicks.png"
 
 const Banner = () => {
   return (
@@ -9,9 +9,9 @@ const Banner = () => {
             <img src={bannerImg} alt="banner" />
         </div>
         <div className='md:w-1/2 w-full'>
-            <h1 className='md:text-5xl text-2xl font-medium mb-7'>¡Calidad y estilo al mejor valor!</h1>
+            <h1 className='md:text-5xl text-2xl font-medium mb-7'>¡Todo lo que necesitas, en un solo lugar!</h1>
             <p className='mb-10'>
-        En Optica Nissis, estamos dedicados a ofrecerte soluciones ópticas que se adapten a tu estilo de vida. Disfruta de una amplia gama de lentes y gafas de sol, diseñadas para que veas el mundo con claridad y mucho estilo. Desde estilos modernos hasta clásicos, nuestra misión es que todos puedan disfrutar de una visión excepcional, sin importar la ocasión. ¡Descubre lo que tenemos para ti!</p>
+            En SeaPicks, nos dedicamos a ofrecerte una amplia variedad de productos de alta calidad para cada aspecto de tu vida. Desde artículos de bazar y decoración únicos, hasta juguetes y lo último en tecnología, tenemos algo especial para todos. Descubre nuestra colección y encuentra aquello que hará tu día a día más especial y divertido. ¡Explora ahora y encuentra todo lo que necesitas con estilo y comodidad!</p>
             <button className='btn-primary'>Ir a la tienda</button>
         </div>
 
