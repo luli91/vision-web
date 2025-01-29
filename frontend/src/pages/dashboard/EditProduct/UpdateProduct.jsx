@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import InputField from '../addProduct/InputField'
-import SelectField from '../addProduct/SelectField'
+import InputField from '../addProduct/inputField';
+import SelectField from '../addProduct/SelectField';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useFetchProductByIdQuery, useUpdateProductMutation } from '../../../redux/features/products/productsApi';
@@ -85,12 +85,13 @@ const UpdateProduct = () => {
             name="category"
             options={[
                 { value: '', label: 'Elejí la Categoria'},
-                { value: 'Sol', label: 'Sol' },
-                { value: 'Lectura', label: 'Lectura' },
-                { value: 'Computadora', label: 'Computadora' },
-                { value: 'Deportivos', label: 'Deportivos' },
-                { value: 'Moda', label: 'Moda' },
-                { value: 'Niños', label: 'Niños' },
+                { value: 'Tecnologia', label: 'Tecnologia' },
+                { value: 'Juguetria', label: 'Juguetria' },
+                { value: 'Belleza y cuidado personal', label: 'Belleza y cuidado personal' },
+                { value: 'Home y deco', label: 'Home y deco' },
+                { value: 'Regaleria', label: 'Regaleria' },
+                { value: 'Bazar', label: 'Bazar' },
+            
             ]}
         register={register}
         />

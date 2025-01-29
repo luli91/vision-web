@@ -83,7 +83,7 @@ const AdminLogin = () => {
             </Button>
         </div>
         </form>
-            <p className='mt-5 text-center text-gray-500 text-xs'>©2025 Nissis - Todos los derechos reservados</p>
+            <p className='mt-5 text-center text-gray-500 text-xs'>©2025 SeaPicks - Todos los derechos reservados</p>
     </div>
 </div>
 )

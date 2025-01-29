@@ -74,13 +74,12 @@ return (
             name="category"
             options={[
             { value: '', label: 'Elejí la Categoria'},
-            { value: 'Sol', label: 'Sol' },
-            { value: 'Lectura', label: 'Lectura' },
-            { value: 'Computadora', label: 'Computadora' },
-            { value: 'Deportivos', label: 'Deportivos' },
-            { value: 'Moda', label: 'Moda' },
-            { value: 'Niños', label: 'Niños' },
-            
+            { value: 'Tecnologia', label: 'Tecnologia' },
+            { value: 'Juguetria', label: 'Juguetria' },
+            { value: 'Belleza y cuidado personal', label: 'Belleza y cuidado personal' },
+            { value: 'Home y deco', label: 'Home y deco' },
+            { value: 'Regaleria', label: 'Regaleria' },
+            { value: 'Bazar', label: 'Bazar' },
             ]}
             register={register}
         />

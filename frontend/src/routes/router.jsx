@@ -17,6 +17,7 @@ import AddProduct from "../pages/dashboard/addProduct/AddProduct";
 import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
 import FavoritePage from "../pages/products/FavoritePage";
 import ProductsPage from "../pages/products/ProductsPage";
+import SearchResultsPage from "../pages/products/SearchResultPage";
 
   
   const router = createBrowserRouter([
@@ -59,6 +60,14 @@ import ProductsPage from "../pages/products/ProductsPage";
         {
           path: "/productos", 
           element: <ProductsPage/>,
+        },
+        {
+          path: "/productos/:category",
+          element: <ProductsPage/>,
+        },
+        {
+          path: "/productos/search", 
+          element: <SearchResultsPage/>,
         }
       ]
     },

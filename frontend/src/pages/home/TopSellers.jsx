@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import { useFetchAllProductsQuery } from '../../redux/features/products/productsApi';
 
 
-const categories = ["Elegí la categoria", "Sol", "Lectura", "Computadora", "Deportivos", "Niños", "Moda"];
+const categories = ["Elegí la categoria", "Tecnologia", "Jugueteria", "Bazar", "Belleza y cuidado personal", "Home y deco", "Regaleria"];
 
 const TopSellers = () => {
     const [selectedCategory, setSelectedCategory] = useState("Elegí la categoria");
@@ -16,7 +16,7 @@ const TopSellers = () => {
 
     const filteredProducts = selectedCategory === "Elegí la categoria"
         ? products
-        : products.filter(product => product.category.toLowerCase() === selectedCategory.trim().toLowerCase());
+        : products.filter(product => product.category.trim().toLowerCase() === selectedCategory.trim().toLowerCase());
     console.log(filteredProducts);
 
     return (

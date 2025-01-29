@@ -1,5 +1,5 @@
 import React from 'react'
-import footerLogo  from "../assets/optica-logo2.png"
+import footerLogo  from "../assets/logoSea.png"
 
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa"
 
@@ -13,8 +13,7 @@ const Footer = () => {
           <img src={footerLogo} alt="Logo" className="mb-5 w-64" />
           <ul className="flex flex-col md:flex-row gap-4">
             <li><a href="#home" className="hover:text-primary">Home</a></li>
-            <li><a href="#services" className="hover:text-primary">Servicios</a></li>
-            <li><a href="#about" className="hover:text-primary">Acerca de nosotros</a></li>
+            <li><a href="#services" className="hover:text-primary">Tienda</a></li>
             <li><a href="#contact" className="hover:text-primary">Contacto</a></li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ const OrderPage = () => {
     if(isError) return <div>Error geting orders data</div>
   return (
     <div className='container mx-auto p-6'>
-      <h2 className='text-2xl font-semibold mb-4'>Tus órdenes</h2>
+      <h2 className='text-2xl font-semibold mb-4'>Mis compras</h2>
       {
         orders.length === 0 ? (<div> ¡No se encontraron pedidos!</div>) : (<div>
             {
