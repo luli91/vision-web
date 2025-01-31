@@ -11,11 +11,6 @@ const Footer = () => {
         {/* Left Side - Logo and Nav */}
         <div className="md:w-1/2 w-full">
           <img src={footerLogo} alt="Logo" className="mb-5 w-64" />
-          <ul className="flex flex-col md:flex-row gap-4">
-            <li><a href="#home" className="hover:text-primary">Home</a></li>
-            <li><a href="#services" className="hover:text-primary">Tienda</a></li>
-            <li><a href="#contact" className="hover:text-primary">Contacto</a></li>
-          </ul>
         </div>
 
         {/* Right Side - Newsletter */}
@@ -33,11 +28,16 @@ const Footer = () => {
             Suscríbete
             </button>
           </div>
+          <div className='mt-10'>
+            <p>Juan B Justo 7224 CABA</p>
+            <p>11 6321-8486</p>
+            <p>cynthiamedina18.08@gmail.com</p>
+          </div>
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-10 border-t border-gray-700 pt-6">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
         {/* Left Side - Privacy Links */}
         <ul className="flex gap-6 mb-4 md:mb-0">
           <li><a href="#privacy" className="hover:text-primary">Política de privacidad</a></li>
@@ -52,7 +52,7 @@ const Footer = () => {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <FaInstagram size={24} />
           </a>
-          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+          <a href="https://wa.me/1563218486?text=Hola%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <FaWhatsapp size={24} />
           </a>
         </div>

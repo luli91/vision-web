@@ -18,6 +18,8 @@ import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
 import FavoritePage from "../pages/products/FavoritePage";
 import ProductsPage from "../pages/products/ProductsPage";
 import SearchResultsPage from "../pages/products/SearchResultPage";
+import Account from "../pages/account/Account";
+import ResetPassword from "../pages/account/ResetPassword";
 
   
   const router = createBrowserRouter([
@@ -68,6 +70,14 @@ import SearchResultsPage from "../pages/products/SearchResultPage";
         {
           path: "/productos/search", 
           element: <SearchResultsPage/>,
+        },
+        {
+          path: "/account", 
+          element: <PrivateRoute><Account/></PrivateRoute>,
+        },
+        {
+          path: "/reset-password", 
+          element: <ResetPassword/>,
         }
       ]
     },

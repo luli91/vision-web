@@ -17,7 +17,7 @@ const TopSellers = () => {
     const filteredProducts = selectedCategory === "Elegí la categoria"
         ? products
         : products.filter(product => product.category.trim().toLowerCase() === selectedCategory.trim().toLowerCase());
-    console.log(filteredProducts);
+
 
     return (
         <div className='py-10'>
@@ -49,7 +49,7 @@ const TopSellers = () => {
                 {
                     filteredProducts.length > 0 && filteredProducts.map((product, index) => (
                         <SwiperSlide key={index}>
-                            <ProductsCard product={product} />
+                            <ProductsCard product={product}  showAddToCartButton={false} />
                         </SwiperSlide>
                     ))
                 }

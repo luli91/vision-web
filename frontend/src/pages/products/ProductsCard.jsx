@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/features/Cart/CartSlice';
 import { addToFavorites, removeFromFavorites } from '../../redux/features/Favorites/FavoriteSlice';
+import Button from '@mui/material/Button';
 
-const ProductsCard = ({ product }) => {
+const ProductsCard = ({ product,  showAddToCartButton = true }) => {
     const dispatch = useDispatch();
     const favoriteItems = useSelector((state) => state.favorites.favoriteItems);
     const isFavorite = favoriteItems.some(item => item._id === product._id);
@@ -52,12 +53,16 @@ const ProductsCard = ({ product }) => {
                     <p className="font-medium mb-5">
                         ${product.newPrice} <span className="line-through font-normal ml-2">${product.oldPrice}</span>
                     </p>
-                    <button
-                        onClick={() => handleAddToCart(product)}
-                        className="btn-primary px-6 space-x-1 flex items-center gap-1">
-                        <FiShoppingCart className="" />
-                        <span>Agregar al carrito</span>
-                    </button>
+                    {showAddToCartButton && (
+                        <Button
+                            onClick={() => handleAddToCart(product)}
+                            type="submit" 
+                            variant="outlined"
+                            color="warning">
+                            <FiShoppingCart className="" />
+                            <span>Agregar al carrito</span>
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

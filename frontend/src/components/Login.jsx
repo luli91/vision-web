@@ -74,6 +74,7 @@ const Login = () => {
           </div>
         </form>
         <p className='align-baseline font-medium mt-4 text-sm'>¿No tenés un cuenta? Por favor <Link to="/register" className="text-primary hover:text-orange-400">Registrate</Link></p>
+        <p className='align-baseline font-medium mt-4 text-sm'>¿No recordás tu contraseña? <Link to="/reset-password" className="text-primary hover:text-orange-400">Reestablecer contraseña</Link></p>
         <div className='mt-4'>
           <button
             onClick={handleGoogleSignIn}

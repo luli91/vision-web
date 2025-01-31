@@ -43,7 +43,7 @@ const NewSeason = () => {
         {products.length > 0 &&
           products.slice(8, 18).map((product, index) => (
             <SwiperSlide key={index}>
-              <ProductsCard product={product} />
+              <ProductsCard product={product} showAddToCartButton={false} />
             </SwiperSlide>
           ))}
       </Swiper>

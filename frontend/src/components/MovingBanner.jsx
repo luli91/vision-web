@@ -2,7 +2,7 @@
 import React from 'react';
 
 const MovingBanner = () => {
-    const text = "¡Envíos gratis a partir de $30.000!";
+    const text = "¡Envíos gratis a partir de $50.000!";
     const repeatedText = new Array(20).fill(text);
 
     return (

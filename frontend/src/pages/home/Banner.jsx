@@ -20,16 +20,14 @@ const Banner = () => {
             <p className='mb-10'>
             En SeaPicks, nos dedicamos a ofrecerte una amplia variedad de productos de alta calidad para cada aspecto de tu vida. Desde artículos de bazar y decoración únicos, hasta juguetes y lo último en tecnología, tenemos algo especial para todos. Descubre nuestra colección y encuentra aquello que hará tu día a día más especial y divertido. ¡Explora ahora y encuentra todo lo que necesitas con estilo y comodidad!</p>
             <div className='flex justify-center'>
-                    <button
-                        className='btn-primary bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300'
-                        onClick={goToProductsPage}
-                    >
-                        Ir a la tienda
-                    </button>
-                </div>
+            <button
+              className=' bg-primary text-white font-bold py-3 px-6 text-lg rounded-full hover:bg-yellow-500 transition duration-300'
+              onClick={goToProductsPage}
+            >
+              Ir a la tienda
+            </button>
+          </div>
         </div>
-
-      
     </div>
   )
 }

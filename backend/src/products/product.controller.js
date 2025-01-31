@@ -1,4 +1,5 @@
 const Product = require('./product.model.js');
+const mongoose = require('mongoose')
 
 const postAProduct = async (req,res) =>{
     try{
@@ -24,18 +25,25 @@ try {
 
 const getSingleProduct = async (req, res) => {
     try {
-        const {id} = req.params;
-        const product = await Product.findById(id);
-        if (!product){
-            res.status(404).send({message: "Product not found"})
-        }
-        res.status(200).send(product)
+      const { id } = req.params;
+      console.log(`Product ID from params: ${id}`);
+  
+      // Aquí no es necesario convertir el ID a ObjectId ya que los IDs son strings
+      console.log(`Fetching product with ID: ${id}`);
+      const product = await Product.findOne({ _id: id });
+  
+      if (!product) {
+        console.log(`Product with ID: ${id} not found`);
+        return res.status(404).send({ message: 'Product not found' });
+      }
+  
+      console.log(`Product found: ${JSON.stringify(product)}`);
+      return res.status(200).send(product);
     } catch (error) {
-        console.error("Error fetching product", error);
-        res.status(500).send({message: "Failed to fetch product"})
+      console.error('Error fetching product:', error.message);
+      return res.status(500).send({ message: 'Failed to fetch product', error: error.message });
     }
-    }
-
+  };
     const UpdateProduct = async (req, res) => {
         try {
             const {id} = req.params;
