@@ -22,10 +22,19 @@ const ordersApi = createApi({
                 url: `/email/${email}`
             }),
             providesTags: ['Orders']
-        })
+        }),
+        requestReturn: builder.mutation({
+            query: ({ purchaseId, reason }) => ({
+                url: `/return-request`,
+                method: "POST",
+                body: { purchaseId, reason },
+                credentials: 'include',
+            }),
+            invalidatesTags: ['Orders'],
+        }),
     })
 })
 
-export const {useCreateOrderMutation, useGetOrderByEmailQuery} = ordersApi;
+export const {useCreateOrderMutation, useGetOrderByEmailQuery, useRequestReturnMutation} = ordersApi;
 
 export default ordersApi;

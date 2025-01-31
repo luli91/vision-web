@@ -3,7 +3,7 @@ import App from "../App";
 import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
-import Cartpage from "../pages/products/Cartpage";
+import Cartpage from "../pages/products/CartPage";
 import CheckoutPage from "../pages/products/CheckoutPage";
 import SingleProduct from "../pages/products/SingleProduct";
 import PrivateRoute from "./PrivateRoute";
@@ -20,6 +20,7 @@ import ProductsPage from "../pages/products/ProductsPage";
 import SearchResultsPage from "../pages/products/SearchResultPage";
 import Account from "../pages/account/Account";
 import ResetPassword from "../pages/account/ResetPassword";
+import MyPurchasesPage from "../pages/myPurchases/MyPurchasesPage";
 
   
   const router = createBrowserRouter([
@@ -78,6 +79,10 @@ import ResetPassword from "../pages/account/ResetPassword";
         {
           path: "/reset-password", 
           element: <ResetPassword/>,
+        },
+        {
+          path: "/my-purchases", 
+          element: <PrivateRoute><MyPurchasesPage/></PrivateRoute>,
         }
       ]
     },

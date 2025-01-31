@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useCreateOrderMutation } from '../../redux/features/orders/ordersApi';
 import Swal from 'sweetalert2';
+import { clearCart } from '../../redux/features/Cart/CartSlice';
 
 const CheckoutPage = () => {
     const cartItems = useSelector((state) => state.cart.cartItems);
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
+    const totalPrice = cartItems.reduce((acc, item) => acc + (item.newPrice * item.quantity), 0).toFixed(2);
+    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+    const dispatch = useDispatch(); 
     const {currentUser} = useAuth()
 
     const {
@@ -42,6 +45,7 @@ const CheckoutPage = () => {
 
         try {
             await createOrder(newOrder).unwrap();
+            dispatch(clearCart());
             Swal.fire({
                 title: "Orden confirmada",
                 text: "Su pedido fue realizado con éxito!",
@@ -51,7 +55,7 @@ const CheckoutPage = () => {
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Ok!",
               });
-              navigate("/orders")
+              navigate("/my-purchases")
         } catch (error) {
             console.error("Error place an order", error);
             alert("Failed to place an order")
@@ -67,7 +71,7 @@ const CheckoutPage = () => {
                         <div>
                             <h2 className="font-semibold text-xl text-gray-600 mb-2">Método de Pago</h2>
                             <p className="text-gray-500 mb-2">Precio Total: ${totalPrice}</p>
-                            <p className="text-gray-500 mb-6">Items: {cartItems.length > 0 ? cartItems.length : 0}</p>
+                            <p className="text-gray-500 mb-6">Items: {totalItems}</p>
                         </div>
                         <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
                             <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3 my-8">

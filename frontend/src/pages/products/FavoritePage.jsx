@@ -17,8 +17,8 @@ const FavoritePage = () => {
   const handleAddToCart = (product) => {
     const quantity = quantities[product._id] || 1;
     if (quantity > 0) {
-      dispatch(addToCart({ ...product, quantity })); // Asegurarse de incluir la cantidad aquí
-      handleRemoveFromFavorites(product); // Remover de favoritos después de agregar al carrito
+      dispatch(addToCart({ ...product, quantity }));
+      handleRemoveFromFavorites(product); 
     }
   };
 

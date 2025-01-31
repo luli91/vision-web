@@ -10,7 +10,7 @@ import Logo from "../assets/logoSea.png";
 import avatarImg from "../assets/avatar.png";
 
 const navigation = [
-    {name: "Mis compras", href:"/orders"},
+    {name: "Mis compras", href:"/my-purchases"},
     {name: "Carrito", href:"/cart"},
     {name: "Mi cuenta", href:"/account"},
 ];

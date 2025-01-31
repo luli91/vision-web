@@ -32,6 +32,10 @@ const orderSchema = new mongoose.Schema({
     totalPrice: {
         type: Number,
         required: true,
+    },
+    delivered: {
+        type: Boolean,
+        default: false,
     }
 }, {
     timestamps: true,

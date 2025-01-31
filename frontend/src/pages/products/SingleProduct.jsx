@@ -11,10 +11,6 @@ const SingleProduct = () => {
   const { data: product, isLoading, isError } = useFetchProductByIdQuery(id);
   const dispatch = useDispatch();
 
-  console.log('Product ID:', id);  // Log del ID del producto
-  console.log('Product Data:', product);  // Log de los datos del producto
-  console.log('Loading State:', isLoading);  // Log del estado de carga
-  console.log('Error State:', isError);  // Log del estado de error
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -45,7 +41,7 @@ const SingleProduct = () => {
         </div>
         <button onClick={() => handleAddToCart(product)} className="btn-primary px-6 space-x-1 flex items-center gap-1">
           <FiShoppingCart className="" />
-          <span>Add to Cart</span>
+          <span>Agregar al carrito</span>
         </button>
       </div>
     </div>

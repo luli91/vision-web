@@ -10,17 +10,12 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            console.log('Payload:', action.payload);
-            console.log('State before mutation:', JSON.parse(JSON.stringify(state.cartItems))); 
             const existingItem = state.cartItems.find(item => item._id === action.payload._id);
-            console.log('Existing Item:', existingItem);
-
             if (existingItem) {
                 existingItem.quantity += (action.payload.quantity || 1); 
             } else {
                 state.cartItems.push({ ...action.payload, quantity: action.payload.quantity || 1 }); 
             }
-            console.log('Cart items after mutation:', JSON.parse(JSON.stringify(state.cartItems)));
 
             Swal.fire({
                 position: 'top-end',

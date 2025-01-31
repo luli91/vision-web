@@ -18,17 +18,14 @@ const CartPage = () => {
   }, [cartItems]);
 
   const handleRemoveFromCart = (product) => {
-    console.log('Eliminando producto:', product);
         dispatch(removeFromCart(product))
   }
 
   const handleClearCart = () => {
-    console.log('Vaciando carrito');
     dispatch(clearCart())
   }
 
   const handleQuantityChange = (product, qty) => {
-    console.log('Cambiando cantidad para:', product, 'Cantidad:', qty);
     if (qty > 0) {
       dispatch(updateQuantity({ productId: product._id, quantity: qty }));
     }
