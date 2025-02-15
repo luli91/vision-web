@@ -11,14 +11,12 @@ import {
   updatePassword,
   sendPasswordResetEmail,
   reauthenticateWithCredential,
-  EmailAuthProvider
+  EmailAuthProvider,
 } from 'firebase/auth';
 
 const AuthContext = createContext();
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -27,43 +25,76 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const registerUser = async (email, password) => {
-    return await createUserWithEmailAndPassword(auth, email, password);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      return userCredential;
+    } catch (error) {
+      console.error("Error al registrar usuario:", error.message);
+      throw error;
+    }
   };
 
   const loginUser = async (email, password) => {
-    return await signInWithEmailAndPassword(auth, email, password);
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      const token = await response.user.getIdToken();
+      localStorage.setItem('token', token);
+      return response;
+    } catch (error) {
+      console.error("Error en inicio de sesión:", error.message);
+      throw error;
+    }
   };
 
   const signInWithGoogle = async () => {
-    return await signInWithPopup(auth, googleProvider);
+    try {
+      const response = await signInWithPopup(auth, googleProvider);
+      const token = await response.user.getIdToken();
+      localStorage.setItem('token', token);
+      return response;
+    } catch (error) {
+      console.error("Error en autenticación con Google:", error.message);
+      throw error;
+    }
   };
 
-  const logout = () => {
-    return signOut(auth);
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem('token');
+      setCurrentUser(null);
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error.message);
+      throw error;
+    }
   };
 
   const updateUserProfile = async (data) => {
-    if (currentUser) {
-      await updateProfile(currentUser, {
-        displayName: data.displayName,
-        photoURL: data.photoURL || null,
-      });
-      setCurrentUser({ ...currentUser, displayName: data.displayName, photoURL: data.photoURL || null });
+    try {
+      if (currentUser) {
+        await updateProfile(auth.currentUser, {
+          displayName: data.displayName,
+          photoURL: data.photoURL || null,
+        });
+        setCurrentUser({ ...auth.currentUser });
+      }
+    } catch (error) {
+      console.error("Error al actualizar perfil:", error.message);
+      throw error;
     }
   };
 
   const updateUserPassword = async (oldPassword, newPassword) => {
-    if (currentUser && oldPassword && newPassword) {
-      const credential = EmailAuthProvider.credential(currentUser.email, oldPassword);
-      try {
-        await reauthenticateWithCredential(currentUser, credential);
-        await updatePassword(currentUser, newPassword);
-      } catch (error) {
-        console.error("Reauthentication failed:", error.message);
-        throw new Error("Reauthentication failed");
+    try {
+      if (!currentUser || !oldPassword || !newPassword) {
+        throw new Error("Se requieren ambas contraseñas");
       }
-    } else {
-      throw new Error("Both old and new passwords are required");
+      const credential = EmailAuthProvider.credential(currentUser.email, oldPassword);
+      await reauthenticateWithCredential(auth.currentUser, credential);
+      await updatePassword(auth.currentUser, newPassword);
+    } catch (error) {
+      console.error("Error al actualizar contraseña:", error.message);
+      throw error;
     }
   };
 
@@ -71,7 +102,8 @@ export const AuthProvider = ({ children }) => {
     try {
       await sendPasswordResetEmail(auth, email);
     } catch (error) {
-      console.error("Error sending password reset email: ", error);
+      console.error("Error al enviar email de recuperación:", error.message);
+      throw error;
     }
   };
 
@@ -81,7 +113,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
   const value = {

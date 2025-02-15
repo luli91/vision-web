@@ -17,12 +17,15 @@ app.use(cors({
 const productRoutes = require('./src/products/product.route');
 const orderRoutes = require('./src/orders/order.route');
 const userRoutes = require("./src/users/user.router");
-const adminRoutes = require("./src/stats/admin.stats");
+const adminRoutes = require("./src/users/admin.router");
+const adminStatsRoutes = require('./src/stats/admin.stats');
 
 app.use("/api/products", productRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
+app.use('/api/users', userRoutes);
+app.use('/api/admin/stats', adminStatsRoutes);
 
 
 main().then(() => console.log("MongoDB connect sucessfully")).catch(err => console.log(err));

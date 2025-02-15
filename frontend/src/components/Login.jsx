@@ -17,15 +17,17 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-        await loginUser(data.email, data.password)
-        alert("login sucessful")
-        navigate("/")
+      const response = await loginUser(data.email, data.password);
+      console.log("Respuesta del loginUser:", response);
+      console.log("Token almacenado en localStorage:", localStorage.getItem('token'));
+      alert("Login successful");
+      navigate("/");
     } catch (error) {
-        setMessage("Por favor provea un email y contraseña válido");
-        console.error(error);
-    } 
+      setMessage("Por favor provea un email y contraseña válido");
+      console.error("Error en onSubmit:", error);
+    }
   };
-
+  
   const handleGoogleSignIn = async () => {
     try {
         await signInWithGoogle();
